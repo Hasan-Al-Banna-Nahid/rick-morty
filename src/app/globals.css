@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "RickAndMortyBlack";
+  src: url("/fonts/TTTravels-BoldItalic.ttf") format("ttf"),
+    url("/fonts/TTTravels-BoldItalic.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RickAndMortyRegular";
+  src: url("/fonts/TTTravels-Regular.ttf") format("ttf"),
+    url("/fonts/TTTravels-Regular.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fontRickMortyHeader {
+  font-family: "RickAndMortyBlack", sans-serif;
+}
+.fontRickMortySub {
+  font-family: "RickAndMortyRegular", sans-serif;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 100px;
+  height: 100px;
+}
+
+.group:hover .card-overlay {
+  opacity: 1;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card-wrapper {
+  position: relative;
+  background: linear-gradient(to bottom right, #34d399, #06b6d4);
+  padding: 2px;
+  border-radius: 1rem;
+  height: 100%;
+  display: block;
+}
+
+.card-inner {
+  background-color: #1a1b26;
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+  position: relative;
+  z-index: 10;
+}
+
+.card-wrapper:hover .card-inner {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+.gradient-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #4ade80, #06b6d4) 1;
+}
